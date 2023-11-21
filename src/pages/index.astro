@@ -1,11 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import astroBanner from "../assets/astro-banner.jpeg";
+import { Image, Picture } from "astro:assets";
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
-    <img src="/astro-banner.jpeg" />
+    <Image src={astroBanner} alt="Astro banner" />
+    <Image src={astroBanner} alt="Astro banner" width={500} height={273} />
+    <Picture src={astroBanner} alt="Astro banner" formats={["avif", "webp"]} />
     <h1>Image optimization</h1>
+    <a href="/post">markdown example</a>
   </main>
 </Layout>
 
@@ -26,5 +31,10 @@ import Layout from "../layouts/Layout.astro";
     line-height: 1;
     text-align: center;
     margin-bottom: 1em;
+  }
+
+  a,
+  a:visited {
+    color: white;
   }
 </style>
